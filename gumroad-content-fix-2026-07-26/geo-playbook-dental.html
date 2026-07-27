@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The GEO Playbook for Dental &amp; Healthcare Practices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #063740; --mint: #2ee6a8; --amber: #f5b942; --coral: #e86a5a;
+    --ink: #f4eee1; --dim: #9fbcba; --card: #0a4552; --border: rgba(238,246,244,.12);
+    --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background:
+      radial-gradient(900px 500px at 12% -8%, rgba(46,230,168,.10), transparent 60%),
+      radial-gradient(700px 500px at 100% 10%, rgba(232,106,90,.08), transparent 55%),
+      linear-gradient(#04262c, #063740 340px, #063740);
+    background-attachment: fixed;
+    color: var(--ink); font-family: var(--sans);
+    line-height: 1.65; max-width: 760px; margin: 0 auto; padding: 60px 24px 100px;
+    position: relative;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+    background-image:
+      linear-gradient(rgba(238,246,244,.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(238,246,244,.14) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(75% 65% at 50% 0%, #000 40%, transparent 92%);
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
+    background-image: radial-gradient(rgba(46,230,168,.5) 1.4px, transparent 1.4px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(75% 65% at 50% 0%, #000 40%, transparent 92%);
+    opacity: .55;
+  }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; line-height: 1.2; margin-bottom: 0.2em; letter-spacing: -.01em; }
+  h3.subtitle { font-family: var(--mono); color: var(--mint); font-weight: 500; margin-top: 0; font-size: .95rem; }
+  h2 { font-family: var(--serif); font-weight: 600; color: var(--mint); font-size: 1.5rem; margin-top: 2.5em; border-top: 1px solid var(--border); padding-top: 1.2em; }
+  h3 { font-family: var(--serif); font-weight: 600; color: var(--ink); font-size: 1.15rem; margin-top: 1.8em; }
+  p { color: var(--dim); }
+  strong { color: var(--ink); }
+  a { color: var(--mint); }
+  code { font-family: var(--mono); background: #052a31; color: var(--amber); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+  pre { background: #052a31; padding: 16px; border-radius: 10px; overflow-x: auto; border: 1px solid var(--border); }
+  pre code { background: none; padding: 0; color: var(--ink); }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+  ul { color: var(--dim); }
+  li { margin-bottom: 0.4em; }
+</style>
+</head>
+<body>
+<h1>The GEO Playbook for Dental & Healthcare Practices</h1>
+<h3 class="subtitle">How to make your practice the answer AI assistants give when someone asks who to see</h3>
+<p>By Click Coded (Alexander K. Eliot). AI-operated, human-reviewed, disclosed everywhere.</p>
+<p>This is the vertical edition of <a href="https://eliotwave01.gumroad.com/l/geo-playbook">The GEO Playbook</a>, rebuilt for dental and healthcare practices. Same technical foundation, adapted for a field where the wrong guide could touch patient data or make a claim it shouldn't. This one doesn't. It stays entirely on the technical, machine-readability side of the line.</p>
+<p>Nobody can guarantee an AI assistant recommends your practice. This playbook does not promise that. It gives you the verifiable, technical conditions that make citation possible, based on what we actually found when we checked.</p>
+<p><strong>Scope, stated up front:</strong> this is a technical GEO/structured-data guide, not medical, legal, or compliance advice. It never touches patient data, PHI, or anything HIPAA governs — everything here is about your public-facing marketing site, the same kind of technical work a web developer does. It does not tell you what you can claim about outcomes or advertise about your services. Talk to your own compliance resource about anything that touches patient claims, before-and-after content, or advertising rules in your state.</p>
+<hr>
+<h2>Module 1 — What we found when we actually checked</h2>
+<p>Industry data says AI search now shapes patient decisions directly: recent research puts AI-assistant influence on dental patient research at 67%, and roughly a quarter of patients say they ask ChatGPT before choosing a provider. That's the demand-side case every GEO guide in this space already makes.</p>
+<p>What we did differently: we ran our own AgentReady audit — the same 9-point machine-readability test behind our <a href="https://alexander-k-eliot.github.io/ai-visibility-check-free/benchmark/">SaaS benchmark</a> — against 13 major dental brands and DSOs (Aspen Dental, Heartland Dental, Comfort Dental, ClearChoice, 1-800-DENTIST, and others). Full ranking and methodology: <a href="https://alexander-k-eliot.github.io/ai-visibility-check-free/dental-benchmark/">the dental benchmark page</a>.</p>
+<p><strong>Average score: 67.7/100. Median: 70/100.</strong> Every one of the 13 had a working robots.txt with no explicit block on AI crawlers — that part's fine. But only 3 of 13 (23%) had published an <code>llms.txt</code> file, the plain-text index AI agents actually read to understand what a site offers, and only 3 of 13 had an <code>agents.md</code> file at all. The gap isn't that dental marketing teams are behind on AI — it's that almost nobody in this specific field has done the narrow, technical, unglamorous part yet. That's the opening this playbook exists to close.</p>
+<hr>
+<h2>Module 2 — The machine-readability foundation</h2>
+<p>Same four gates as any site, with one dental-specific wrinkle: a large share of practice websites run on platforms built by dental-specific vendors (ProSites, Officite, WEO Media, Sesame, Weave-connected templates) designed to handle appointment booking and patient portals, not machine-readable marketing content. Solving "patients can book online" and solving "an AI crawler can read this page" are two different problems, and most practice sites have only solved the first one — which tracks with what Module 1's audit found.</p>
+<h3>2.1 Server-rendered content</h3>
+<p>View source (not inspect element) on your homepage and your services pages. If your practice name, location, and services aren't sitting in the raw HTML, a non-JS-executing AI crawler sees an empty page, no matter how the site looks in a browser or how well your booking widget works.</p>
+<h3>2.2 robots.txt with an explicit AI policy</h3>
+<p>Confirm <code>/robots.txt</code> explicitly addresses the major AI crawlers (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended). This was the one check every site in our sample passed — worth confirming yours does too, but it's not where the gap is. The free <a href="https://alexander-k-eliot.github.io/ai-visibility-check-free/robots-txt-generator/">robots.txt generator</a> builds this in under a minute.</p>
+<h3>2.3 llms.txt</h3>
+<p>A short markdown index at <code>yourpractice.com/llms.txt</code>: practice name, what you do, which services you offer, which locations, links to your team and contact pages. This is the single highest-leverage gap Module 1 found — only 23% of the sample had one. The <a href="https://alexander-k-eliot.github.io/ai-visibility-check-free/llms-txt-generator/">free generator</a> fills this from a short form.</p>
+<h3>2.4 XML sitemap</h3>
+<p>Confirm <code>/sitemap.xml</code> exists and is referenced from <code>robots.txt</code>. Multi-location practices and DSOs especially benefit here — a sitemap is how a crawler discovers your 12th location page without you having to link it from the homepage.</p>
+<hr>
+<h2>Module 3 — Structured data for practice sites</h2>
+<h3>3.1 Dentist / MedicalBusiness / LocalBusiness schema</h3>
+<pre><code>
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Your Practice Name",
+  "url": "https://yourpractice.com",
+  "telephone": "+1-555-555-5555",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main St",
+    "addressLocality": "Your City",
+    "addressRegion": "ST",
+    "postalCode": "00000"
+  },
+  "sameAs": [
+    "https://www.google.com/maps/place/your-practice",
+    "https://www.healthgrades.com/dentist/your-practice"
+  ]
+}
+</code></pre>
+<p>For a multi-location practice, every location gets its own <code>Dentist</code>/<code>LocalBusiness</code> block with its own address and phone — one generic block for the whole brand undersells exactly the local-intent queries ("dentist near me," "emergency dentist in [city]") most likely to route through an AI assistant.</p>
+<h3>3.2 Person schema for each provider</h3>
+<p>Individual dentists and hygienists are often the actual entity a patient is asking about. A <code>Person</code> schema block on each provider's bio page, with <code>honorificSuffix</code> for DDS/DMD-style credentials and a <code>sameAs</code> link to their state dental board license lookup or NPI registry record, gives a model a checkable signal instead of a marketing claim.</p>
+<h3>3.3 FAQPage schema — the safest high-leverage content type you have</h3>
+<p>General patient-education content — "What is a root canal," "How does Invisalign work," "How often should you get a cleaning" — is the content type a practice can publish with the least risk, because it explains procedures and general dental health rather than making claims about your specific outcomes. It's also exactly the shape (a direct question, a direct answer) that AI systems disproportionately quote. The free <a href="https://alexander-k-eliot.github.io/ai-visibility-check-free/faq-schema-generator/">FAQ schema generator</a> and <a href="https://alexander-k-eliot.github.io/ai-visibility-check-free/faq-content-scanner/">FAQ content scanner</a> handle the markup once you've written honest, real answers.</p>
+<p><strong>The rule that matters more than the code:</strong> only mark up questions your page visibly, actually answers, and never mark up anything that reads as a claim about outcomes, results, or comparisons ("best dentist in [city]," "pain-free guarantee"). Schema makes claims more discoverable, not less risky — get the content right first.</p>
+<hr>
+<h2>Module 4 — Writing content that's appropriate and gets quoted</h2>
+<h3>4.1 Educational, not promotional</h3>
+<p>"Here's how a crown procedure works" clears more scrutiny than "here's why we're the best," and it's the framing AI systems trust and cite more readily too. The safest content posture and the most citable one point the same direction here, same as in every regulated field.</p>
+<h3>4.2 Answer-first paragraphs</h3>
+<p>Put the direct answer in the first sentence under each heading. A model quoting your page pulls the self-contained sentence, not the paragraph that gets to the point three sentences later.</p>
+<h3>4.3 Services and specialization, stated plainly</h3>
+<p>"DDS, specializing in pediatric sedation dentistry" is a concrete, quotable fact. "Comprehensive family dental care" is not. Say exactly which services you offer and which providers do what, on the page, in plain language a model can extract.</p>
+<h3>4.4 One page, one procedure</h3>
+<p>A page trying to cover cleanings, implants, and orthodontics at once answers none of them cleanly enough to quote. Split broad service pages into focused pages built around single procedures or questions.</p>
+<hr>
+<h2>Module 5 — Identity consistency across the sources a model actually checks</h2>
+<p>A model forming an opinion about a practice has more checkable, structured, third-party sources available than most fields:</p>
+<ul>
+<li><strong>State dental board license lookup</strong> and <strong>NPI registry</strong>: your provider's licensure and specialty, independent of anything you publish. Confirm names match your website exactly.</li>
+<li><strong>Google Business Profile</strong>: for a local-intent business, this is often the single most-checked source. Same practice name, same address, same phone, same hours, everywhere.</li>
+<li><strong>Healthgrades, Zocdoc, insurance-directory listings</strong>: same identity details across every one of these. Fragmented listings (old address at one, old phone at another) read as a weaker, less-trusted entity to both search engines and AI systems, the same way it confuses a patient trying to book.</li>
+<li><strong>Multi-location consistency</strong>: for DSOs and multi-location practices specifically, every location needs matching, distinct NAP (name/address/phone) data — a shared generic listing for all locations is exactly the kind of gap Module 3.1's per-location schema fixes.</li>
+</ul>
+<hr>
+<h2>Module 6 — Measuring and iterating</h2>
+<p>1. Run the <a href="https://alexander-k-eliot.github.io/ai-visibility-check-free/">free checker</a> on your homepage and your top service page today. Save the score.</p>
+<p>2. Ask ChatGPT and Perplexity directly what they know about your practice. Save the actual answers.</p>
+<p>3. Fix the highest-weight failing checks first: <code>llms.txt</code> and structured data outweigh polish, per Module 1's findings.</p>
+<p>4. Re-run the checker and re-ask the assistants in four to six weeks.</p>
+<p>If you'd rather this run on a schedule without you remembering: <a href="https://eliotwave01.gumroad.com/l/pulse">Pulse</a> re-runs this exact check monthly or weekly and emails you a drift report, from $9/mo.</p>
+<hr>
+<h2>Module 7 — Your 30-day plan</h2>
+<p><strong>Week 1:</strong> Module 2 (robots.txt, llms.txt, sitemap, server-rendering check). These gate everything else and don't touch patient data or advertising rules at all.</p>
+<p><strong>Week 2:</strong> Module 3 (Dentist/LocalBusiness + Person schema) on your homepage, every location page, and every provider bio page.</p>
+<p><strong>Week 3:</strong> Draft 3-5 patient-education FAQ entries using Module 4's framing, and mark them up with Module 3.3's schema.</p>
+<p><strong>Week 4:</strong> Module 5 (identity sweep across Google Business Profile, Healthgrades, insurance directories, state board lookup) + Module 6 (baseline measurement, save your results).</p>
+<p>Repeat the measurement step every 4-6 weeks after that.</p>
+<hr>
+<h2>Honest scope</h2>
+<p>This playbook teaches the real, verifiable technical conditions that make AI citation possible for a dental or healthcare practice. It does not, and cannot, guarantee that any specific assistant cites, ranks, or recommends your practice, and it is not medical, legal, or compliance advice. It never touches patient data or PHI — everything here is public-facing marketing-site technical work. Nothing here tells you what you can claim about outcomes or how to advertise. That determination belongs to your own judgment and your state's rules, on your specific content, every time.</p>
+<p>What you can control: whether the technical conditions exist, and whether the content you're already comfortable publishing is actually readable by the systems your patients are asking. This playbook, and the audit data in Module 1, is how you find out where you actually stand.</p>
+<p>AI-operated, human-reviewed studio. Questions: alexander.k.eliot@gmail.com. Want the technical implementation done for you instead of by you? A full server-side audit with a written fix list starts at $25 on <a href="https://www.fiverr.com/alexanderkeliot">Fiverr</a> and Upwork Project Catalog ("Alexander E.").</p>
+</body>
+</html>
